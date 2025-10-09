@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ست کامل توپ‌های بیلیارد</title>
+  <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/css.css">
+  <style>
+    body {
+     
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+      direction: rtl;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .product-image {
+      flex: 1 1 50%;
+    }
+    .product-image img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .product-details {
+      flex: 1 1 45%;
+    }
+
+    .product-title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .product-sku {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    ul.features {
+      margin: 20px 0;
+      padding: 0 20px;
+      list-style: disc;
+      line-height: 1.8;
+    }
+
+    /* تعداد و دکمه خرید */
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+    }
+    .qty-control {
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+    .qty-control button {
+      background: none;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .qty-control input {
+      width: 50px;
+      text-align: center;
+      border: none;
+      font-size: 16px;
+    }
+
+    .add-to-cart {
+       background-color:rgb(79,89,64) ;
+        border: 1px solid rgb(79,89,64) !important;
+        color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .add-to-cart:hover {
+       background-color: white;
+        color: rgb(79,89,64);
+    }
+
+    .find-dealer {
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #a67c00;
+      cursor: pointer;
+    }
+
+    /* ریسپانسیو */
+    @media (max-width: 768px) {
+      .content {
+        height: 100%;
+        max-width: 100%;
+
+      }
+      
+    }
+  </style>
+</head>
+<body>
+        <header>
+
+
+    <div class="links">
+      <div class="sidebar-toggle">
+        <svg class="burger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path d="M96 152C96 138.7 106.7 128 120 128L520 128C533.3 128 544 138.7 544 152C544 165.3 533.3 176 520 176L120 176C106.7 176 96 165.3 96 152zM96 320C96 306.7 106.7 296 120 296L520 296C533.3 296 544 306.7 544 320C544 333.3 533.3 344 520 344L120 344C106.7 344 96 333.3 96 320zM544 488C544 501.3 533.3 512 520 512L120 512C106.7 512 96 501.3 96 488C96 474.7 106.7 464 120 464L520 464C533.3 464 544 474.7 544 488z"/>
+        </svg>
+        <a href="#" class="menu-text">دسته بندی کالاها</a>
+      </div>
+      <a href="index.html">خانه</a>
+      <a href="#">بیلیارد</a>
+      <a href="#">بازی‌ها</a>
+      <a href="#">بیوگرافی</a>
+    </div>
+
+        <div class="logo">
+      <img src="images/logo.jpg" alt="Logo">
+    </div>
+  </header>
+
+  <!-- ===== Overlay ===== -->
+  <div class="overlay"></div>
+
+  <!-- ===== Sidebar ===== -->
+  <aside>
+    <span class="close-btn">&times;</span>
+    <ul>
+      <li class="has-submenu">
+        <a href="#">اسنوکر</a>
+        <span>+</span>
+        <ul class="submenu">
+          <li><a href="snookers.html">میز اسنوکر</a></li>
+          <li><a href="snooker.html">توپ اسنوکر</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="#">ایت بال</a>
+        <span>+</span>
+        <ul class="submenu">
+          <li><a href="eighttable.html">میز ایت بال</a></li>
+          <li><a href="ball8.html">توپ ایت بال</a></li>
+        </ul>
+      </li>
+      <li><a href="cues.html">چوب</a></li>
+      <li><a href="janebis.html">لوازم جانبی</a></li>
+      <li><a href="clths.html">ماهوت</a></li>
+      <li><a href="#">بازی‌ها</a></li>
+    </ul>
+  </aside>
+  <div class="content">
+    <!-- تصویر محصول -->
+    <div class="product-image">
+      <img src="images/ball/batch1-centennial-premium-individual-pocket-balls_2c063f0f-4a8e-4f36-9a96-466d717a720c_533x.webp" alt="ست کامل توپ‌های بیلیارد">
+    </div>
+
+    <!-- جزئیات محصول -->
+    <div class="product-details">
+      <div class="product-title">ست کامل توپ‌های بیلیارد کلاسیک</div>
+      <div class="product-sku">کد محصول: 51869953002</div>
+      <div class="price">۱۲۵ دلار</div>
+
+      <ul class="features">
+        <li>توپ‌های بیلیارد کلاسیک گزینه‌ای مقرون‌به‌صرفه برای بازی‌های روزمره هستند.</li>
+        <li>این توپ‌ها از جنس پلی‌استر ساخته شده‌اند که سبک و مقاوم است.</li>
+        <li>هر توپ با دقت بالا پرداخت و صیقل داده شده تا عملکرد یکنواختی روی میز داشته باشد.</li>
+        <li>مناسب بازیکنان مبتدی و تفریحی که به دنبال ست اقتصادی و مطمئن هستند.</li>
+      </ul>
+
+      <!-- کنترل تعداد و خرید -->
+      <div class="actions">
+        <div class="qty-control">
+          <button onclick="decreaseQty()">−</button>
+          <input type="text" id="qty" value="1">
+          <button onclick="increaseQty()">+</button>
+        </div>
+        <button class="add-to-cart">افزودن به سبد خرید</button>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <footer>
+      <div class="footer-container">
+    <!-- Logo and Contact Info -->
+    <div class="footer-logo-section">
+      <img src="images/logo.jpg" alt="Brunswick Logo" class="footer-logo">
+
+      <a href="tel:8003368771" class="footer-phone">800-336-8771</a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Customer Care Section -->
+    <div class="footer-links">
+    <h3>خدمات مشتریان</h3>
+      <ul>
+        
+        <li><a href="#">تماس با ما</a></li>
+        <li><a href="#">حمل و بازگشت کالا</a></li>
+        <li><a href="#">گارانتی</a></li>
+        <li><a href="#">سوالات متداول</a></li>
+        <li><a href="#">مراقبت از میز</a></li>
+      </ul>
+    </div>
+
+    <!-- Company Section -->
+    <div class="footer-links">
+      <h3>شرکت</h3>
+      <ul>
+        <li><a href="#"> چرا ما؟</a></li>
+        <li><a href="#">تاریخچه ما</a></li>
+        <li><a href="#">یادگیری</a></li>
+      </ul>
+    </div>
+
+    <!-- Shop Section -->
+    <div class="footer-links">
+      <h3>فروشگاه</h3>
+      <ul>
+        <li><a href="#">بیلیارد</a></li>
+        <li><a href="#">بازی‌ها</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="footer-newsletter">
+      <h3>در تماس باشید</h3>
+      <p>برای اطلاع از آخرین محصولات، اخبار و رویدادهای ویژه ثبت‌نام کنید</p>
+      <div class="newsletter-form">
+        <button>➤</button>
+        <input type="email" placeholder="آدرس ایمیل">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <ul>
+      <li><a href="#">سیاست حفظ حریم خصوصی</a></li>
+      <li><a href="#">شرایط استفاده</a></li>
+      <li><a href="#">فروش عمده</a></li>
+    </ul>
+  </div>
+  </footer>
+  
+    <!-- ===== Script ===== -->
+  <script>
+    const burger = document.querySelector('.burger-menu');
+    const sidebar = document.querySelector('aside');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+    const submenuToggles = document.querySelectorAll('.has-submenu > span');
+
+    // باز کردن منو
+    function openMenu() {
+      if (window.innerWidth <= 600) {
+        sidebar.style.right = '0';
+        overlay.style.display = 'block';
+      } else {
+        sidebar.style.right = '0';
+        document.querySelector('.content').style.marginRight = '250px';
+      }
+    }
+
+    // بستن منو
+    function closeMenu() {
+      if (window.innerWidth <= 600) {
+        sidebar.style.right = '-100%';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.right = '-250px';
+        document.querySelector('.content').style.marginRight = '0';
+      }
+    }
+
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // باز و بسته کردن زیرمنوها
+    submenuToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const submenu = toggle.nextElementSibling;
+        const isOpen = submenu.style.display === 'block';
+        submenu.style.display = isOpen ? 'none' : 'block';
+        toggle.textContent = isOpen ? '+' : '-';
+      });
+    });
+    // document.querySelector(".table-img").addEventListener("click", function() {
+    //     console.log("hi");
+    //   this.src = "images/eightbal/batch1-allenton-7-foot-pool-table-with-ball-and-claw-leg__espresso_2_533x.jpg";
+    // });
+    function decreaseQty() {
+      let qty = document.getElementById('qty');
+      if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
+    }
+    function increaseQty() {
+      let qty = document.getElementById('qty');
+      qty.value = parseInt(qty.value) + 1;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پارچه میز بیلیارد</title>
+
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/css.css">
+  <link rel="stylesheet" href="style/eightball.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: tahoma, sans-serif;
+      direction: rtl;
+      background-color: #fff;
+    }
+
+    /* بخش پارچه‌ها */
+    .clothes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      gap: 30px;
+      background: #f8f8f8;
+      min-height: 400px;
+    }
+
+    .cloth {
+      text-align: center;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .cloth:hover {
+      transform: translateY(-5px);
+    }
+
+    .cloth img {
+      width: 550px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .cloth p {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .cloth .price {
+      color: #444;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .cloth a {
+      display: inline-block;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cloth a:hover {
+      background-color: #1a242f;
+    }
+
+    /* بنر */
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* فاصله بین محتوا و فوتر */
+    .content {
+      margin-bottom: 80px;
+      height: 100%;
+    }
+
+    /* فوتر */
+    footer {
+      background-color: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer h3 {
+      color: #fff;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .cloth img {
+        width: 100%;
+        height: auto;
+      }
+
+      .clothes {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="links">
+      <div class="sidebar-toggle">
+        <svg class="burger-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path d="M96 152C96 138.7 106.7 128 120 128L520 128C533.3 128 544 138.7 544 152C544 165.3 533.3 176 520 176L120 176C106.7 176 96 165.3 96 152zM96 320C96 306.7 106.7 296 120 296L520 296C533.3 296 544 306.7 544 320C544 333.3 533.3 344 520 344L120 344C106.7 344 96 333.3 96 320zM544 488C544 501.3 533.3 512 520 512L120 512C106.7 512 96 501.3 96 488C96 474.7 106.7 464 120 464L520 464C533.3 464 544 474.7 544 488z"/>
+        </svg>
+        <a href="#" class="menu-text">دسته‌بندی کالاها</a>
+      </div>
+      <a href="index.html">خانه</a>
+      <a href="#">بیلیارد</a>
+      <a href="#">بازی‌ها</a>
+      <a href="#">بیوگرافی</a>
+    </div>
+
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Logo">
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+
+  <aside>
+    <span class="close-btn">&times;</span>
+    <ul>
+      <li class="has-submenu">
+        <a href="#">اسنوکر</a><span>+</span>
+        <ul class="submenu">
+          <li><a href="snookers.html">میز اسنوکر</a></li>
+          <li><a href="snooker.html">توپ اسنوکر</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a href="#">ایت بال</a><span>+</span>
+        <ul class="submenu">
+          <li><a href="eighttable.html">میز ایت بال</a></li>
+          <li><a href="ball8.html">توپ ایت بال</a></li>
+        </ul>
+      </li>
+      <li><a href="cues.html">چوب</a></li>
+      <li><a href="janebis.html">لوازم جانبی</a></li>
+      <li><a href="clths.html">ماهوت</a></li>
+      <li><a href="#">بازی‌ها</a></li>
+    </ul>
+  </aside>
+
+  <!-- محتوا -->
+  <div class="content">
+    <div class="banner">
+      <img src="images/cloth/cloth_collection_banner_3000x1060_e183c288-49be-4328-91c0-c21bda95d3a8_2800x@2x.jpg" alt="">
+    </div>
+
+    <div class="clothes">
+      <div class="cloth">
+        <img src="images/cloth/batch1-brunswick-billiards-table-cloth-9-ft__traditional-woolen-cloth_1_533x.webp" alt="پارچه میز ۹ فوت">
+        <p>پارچه میز بیلیارد برانزویک ۹ فوت</p>
+        <span class="price">قیمت: ۱۰,۰۰۰,۰۰۰ تومان</span>
+        <a href="cloth.html">اطلاعات بیشتر</a>
+      </div>
+
+      <div class="cloth">
+        <img src="images/cloth/batch1-brunswick-billiards-table-cloth-standard-size__traditional-woolen-cloth_1_533x.jpg" alt="پارچه میز استاندارد">
+        <p>پارچه میز بیلیارد استاندارد برانزویک</p>
+        <span class="price">قیمت: ۱۰,۰۰۰,۰۰۰ تومان</span>
+        <a href="cloth.html">اطلاعات بیشتر</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- فوتر -->
+<footer>
+      <div class="footer-container">
+    <!-- Logo and Contact Info -->
+    <div class="footer-logo-section">
+      <img src="images/logo.jpg" alt="Brunswick Logo" class="footer-logo">
+
+      <a href="tel:8003368771" class="footer-phone">800-336-8771</a>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Customer Care Section -->
+    <div class="footer-links">
+    <h3>خدمات مشتریان</h3>
+      <ul>
+        
+        <li><a href="#">تماس با ما</a></li>
+        <li><a href="#">حمل و بازگشت کالا</a></li>
+        <li><a href="#">گارانتی</a></li>
+        <li><a href="#">سوالات متداول</a></li>
+        <li><a href="#">مراقبت از میز</a></li>
+      </ul>
+    </div>
+
+    <!-- Company Section -->
+    <div class="footer-links">
+      <h3>شرکت</h3>
+      <ul>
+        <li><a href="#"> چرا ما؟</a></li>
+        <li><a href="#">تاریخچه ما</a></li>
+        <li><a href="#">یادگیری</a></li>
+      </ul>
+    </div>
+
+    <!-- Shop Section -->
+    <div class="footer-links">
+      <h3>فروشگاه</h3>
+      <ul>
+        <li><a href="#">بیلیارد</a></li>
+        <li><a href="#">بازی‌ها</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="footer-newsletter">
+      <h3>در تماس باشید</h3>
+      <p>برای اطلاع از آخرین محصولات، اخبار و رویدادهای ویژه ثبت‌نام کنید</p>
+      <div class="newsletter-form">
+        <button>➤</button>
+        <input type="email" placeholder="آدرس ایمیل">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <script>
+    const burger = document.querySelector('.burger-menu');
+    const sidebar = document.querySelector('aside');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+    const submenuToggles = document.querySelectorAll('.has-submenu > span');
+
+    function openMenu() {
+      if (window.innerWidth <= 600) {
+        sidebar.style.right = '0';
+        overlay.style.display = 'block';
+      } else {
+        sidebar.style.right = '0';
+        document.querySelector('.content').style.marginRight = '250px';
+      }
+    }
+
+    function closeMenu() {
+      if (window.innerWidth <= 600) {
+        sidebar.style.right = '-100%';
+        overlay.style.display = 'none';
+      } else {
+        sidebar.style.right = '-250px';
+        document.querySelector('.content').style.marginRight = '0';
+      }
+    }
+
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    submenuToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const submenu = toggle.nextElementSibling;
+        const isOpen = submenu.style.display === 'block';
+        submenu.style.display = isOpen ? 'none' : 'block';
+        toggle.textContent = isOpen ? '+' : '-';
+      });
+    });
+  </script>
+</body>
+</html>
