@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html lang="fa">
+   <head>
+      <meta charset="UTF-8">
+      <title>سبد خرید ساده</title>
+      <style> body { font-family: sans-serif; background: #f9f9f9; padding: 20px; direction: rtl; } 
+      .product { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; background: #fff; border-radius: 8px; } 
+      button { background: #007bff; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+       button:hover { background: #0056b3; } #cart { margin-top: 30px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        #cart-items { margin-bottom: 10px; } 
+        .cart-item { display: flex; justify-content: space-between; margin: 5px 0; border-bottom: 1px dashed #ddd; padding-bottom: 5px; } .remove-btn { background: red; color: white; border: none; padding: 4px 8px; border-radius: 3px; cursor: pointer; font-size: 12px; } </style>
+   </head>
+   <body>
+      <h1>🛒 فروشگاه نمونه</h1>
+      <!-- محصولات --> 
+      <div class="product">
+         <h3>کفش ورزشی</h3>
+         <p>قیمت: 250000 تومان</p>
+         <button onclick="addToCart('کفش ورزشی', 250000)">افزودن به سبد خرید</button> 
+      </div>
+      <div class="product">
+         <h3>تیشرت</h3>
+         <p>قیمت: 150000 تومان</p>
+         <button onclick="addToCart('تیشرت', 150000)">افزودن به سبد خرید</button> 
+      </div>
+      <div class="product">
+         <h3>ساعت مچی</h3>
+         <p>قیمت: 400000 تومان</p>
+         <button onclick="addToCart('ساعت مچی', 400000)">افزودن به سبد خرید</button> 
+      </div>
+      <!-- سبد خرید --> 
+      <div id="cart">
+         <h2>سبد خرید شما</h2>
+         <div id="cart-items"></div>
+         <p><strong>جمع کل: </strong><span id="total-price">0</span> تومان</p>
+      </div>
+     <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    function renderCart() {
+        const cartItemsDiv = document.getElementById("cart-items");
+        const totalPriceSpan = document.getElementById("total-price");
+        cartItemsDiv.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            total += item.price;
+            cartItemsDiv.innerHTML += (
+                <div class="cart-item">
+                    {" "}
+                    <span>
+                        ${item.name} - ${item.price.toLocaleString()} تومان
+                    </span>
+                    <button class="remove-btn" onclick="removeItem(${index})">
+                        حذف
+                    </button>{" "}
+                </div>
+            );
+        });
+        totalPriceSpan.textContent = total.toLocaleString();
+        localStorage.setItem("cart", JSON.stringify(cart));
+    }
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        renderCart();
+    }
+    function removeItem(index) {
+        cart.splice(index, 1);
+        renderCart();
+    } // نمایش سبد خرید هنگام لود صفحه renderCart();
+</script>
+   </body>
+</html>

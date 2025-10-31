@@ -30,8 +30,7 @@
     }
     .product-image img {
       width: 100%;
-      max-width: 800px;
-      max-height: 500px;
+      height: 500px;
       border-radius: 5px;
     }
 
@@ -113,6 +112,117 @@
       color: #a67c00;
       cursor: pointer;
     }
+        .addtocart {
+  position: fixed;
+  top: 100px;
+  right: -320px;
+  width: 290px;
+  background-color: white;
+  transition: right 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 1000;
+  max-height: 70vh;       /* Limit height to viewport */
+  overflow-y: auto;        /* Enable vertical scrolling */
+  padding: 10px; 
+}
+.addtocart::-webkit-scrollbar {
+  width: 6px;
+}
+
+.addtocart::-webkit-scrollbar-thumb {
+  background: rgb(79,89,64);
+  border-radius: 4px;
+}
+
+.addtocart::-webkit-scrollbar-thumb:hover {
+  background: rgb(60,70,50);
+}
+
+/* When visible */
+.addtocart.show {
+  right: 20px; /* slides into view */
+  opacity: 1;
+  visibility: visible;
+}
+    .addtocart .top{
+      display: flex;
+    }
+    .addtocart .top p {
+      color: black;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+    .twodiv{
+        display: flex;
+        flex-direction: row;
+
+     }
+      .addtocart-img img {
+        width: 100px;
+        height: 100px;
+        
+      }
+      .addtocart svg{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+      }
+
+      .addtocart-desc {
+        flex: 1 1 45%;
+      }
+
+      .addtocart-title {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .addtocart-sku {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 15px;
+      }
+      .addtocart-price {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #222;
+      }
+      .addtocart button{
+        width: 70%;
+        background-color:  rgb(79,89,64);
+        color: white;
+        border-radius: 50%;
+        margin-bottom: 30px;
+       
+        height: 30px;
+        cursor: pointer;
+        border: none;
+      }
+      
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.quantity-controls button {
+  width: 25px;
+  height: 25px;
+  background: rgb(79,89,64);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+.quantity-controls button:hover {
+  background: rgb(60, 70, 50);
+}
 
     /* ریسپانسیو */
     @media (max-width: 768px) {
@@ -177,6 +287,24 @@
     </ul>
   </aside>
   <div class="content">
+            <!-- add to cart notif -->
+     <div class="addtocart">
+      <div class="top">
+         <!-- <p>محصول به سبد خرید اضافه شد.</p> -->
+        
+         <svg onclick="deletenotif()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+        
+      </div>
+        <div class="cart-items">
+        
+        
+           
+       
+      </div>
+      
+ <button onclick="window.location.href='checkout.php'">رفتن به سبد خرید</button>
+ <p><strong>جمع کل: </strong><span id="total-price">0</span> تومان</p>
+</div>
     <!-- تصویر محصول -->
     <div class="product-image">
       <img src="images/cues/batch1-brunswick-brown-cue__21-oz_2_533x.webp" alt="ست کامل توپ‌های بیلیارد">
@@ -202,7 +330,7 @@
           <input type="text" id="qty" value="1">
           <button onclick="increaseQty()">+</button>
         </div>
-        <button class="add-to-cart">افزودن به سبد خرید</button>
+       <button class="add-to-cart" onclick="addToCart('cue', 125,'images/cues/batch1-brunswick-brown-cue__21-oz_2_533x.webp')">افزودن به سبد خرید</button>
       </div>
 
       
@@ -276,7 +404,6 @@
     </ul>
   </div>
   </footer>
-  
     <!-- ===== Script ===== -->
   <script>
     const burger = document.querySelector('.burger-menu');
@@ -332,6 +459,106 @@
       let qty = document.getElementById('qty');
       qty.value = parseInt(qty.value) + 1;
     }
+  let qty = document.getElementById('qty');
+
+    // add to carttttt
+   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function rendercart() {
+  const cartitem = document.querySelector(".cart-items");
+  const totalPriceSpan = document.getElementById("total-price");
+  cartitem.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    let itemtotal = item.price * item.qty;
+    total += itemtotal;
+
+ 
+    cartitem.innerHTML += `
+  <div class="twodiv">
+    <div class="addtocart-img">
+      <img src="${item.img}" alt="">
+    </div>
+    <div class="addtocart-desc">
+      <div class="product-title">${item.name}</div>
+      <div class="price">${item.price} دلار × ${item.qty} = ${item.price * item.qty} دلار</div>
+
+      <div class="quantity-controls">
+        <button onclick="decreasecartQty(${index})">−</button>
+       
+        <span  onchange="updateCartQty(${index}, this.value)">${item.qty}</span>
+        <button onclick="increasecartQty(${index})">+</button>
+      </div>
+    </div>
+    <button class="remove-btn" onclick="removeItem(${index})">حذف</button>
+  </div>
+`;
+  });
+
+  totalPriceSpan.textContent = `${total} دلار`;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function addToCart(name, price, img) {
+  const addtocartHDL = document.querySelector(".addtocart");
+const qtyInput = document.getElementById("qty"); // get the page quantity
+  const selectedQty = parseInt(qtyInput.value) || 1;
+
+  addtocartHDL.classList.add("show");
+  // setTimeout(() => addtocartHDL.classList.remove("show"), 3000);
+
+  const existingItem = cart.find(item => item.name === name);
+  if (existingItem) {
+     existingItem.qty += selectedQty; 
+  } else {
+     cart.push({ name, price, img, qty: selectedQty }); // add with selected qty
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+
+  qtyInput.value = 1;
+
+  rendercart();
+}
+
+function increasecartQty(index) {
+  cart[index].qty++;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  rendercart();
+}
+
+function decreasecartQty(index) {
+  if (cart[index].qty > 1) {
+    cart[index].qty--;
+  } else {
+    cart.splice(index, 1);
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  rendercart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  rendercart();
+}
+
+
+  function deletenotif (){
+     const addtocartHDL = document.querySelector(".addtocart");
+     addtocartHDL.classList.remove("show");
+  }
+  function updateCartQty(index, newQty) {
+  newQty = parseInt(newQty);
+  if (isNaN(newQty) || newQty < 1) newQty = 1; // prevent invalid values
+
+  cart[index].qty = newQty;
+  localStorage.setItem("cart", JSON.stringify(cart));
+  rendercart(); // refresh cart display
+}
   </script>
 </body>
 </html>
